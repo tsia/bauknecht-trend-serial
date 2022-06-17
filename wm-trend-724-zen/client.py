@@ -2,6 +2,7 @@
 
 import sys
 import socket
+from telnetlib import KERMIT
 
 CHUNK_SIZE = 8
 SEPARATOR = b'\x00'
@@ -54,4 +55,7 @@ def main():
             print(format_message(message))
 
 
-main()
+try:
+    main()
+except KeyboardInterrupt:
+    sys.exit(0)
